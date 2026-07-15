@@ -6,7 +6,9 @@ int main() {
   std::cout << std::unitbuf;
   std::cerr << std::unitbuf;
 
-  while (true) {
+  bool running {true};
+
+  while (running) {
     std::cout << "$ ";
 
     std::string command;
