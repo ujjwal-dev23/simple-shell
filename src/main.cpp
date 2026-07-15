@@ -14,6 +14,12 @@ int main() {
     std::string command;
     std::getline(std::cin, command);
 
-    std::cout << command << ": command not found\n";
+    // Currently case-sensitive
+    if (command == "exit") {
+        running = false;
+    }
+    else {
+        std::cout << command << ": command not found\n";
+    }
   }
 }
