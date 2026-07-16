@@ -7,5 +7,5 @@
 namespace Builtins {
     const std::unordered_set<std::string> builtin_names {"echo", "type", "exit"};
     void echo(std::vector<std::string>& args);
-    int type(std::string command_arg);
+    void type(std::string command_arg);
 }

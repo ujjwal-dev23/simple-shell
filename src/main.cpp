@@ -18,7 +18,7 @@ int main() {
     std::string command;
     std::getline(std::cin, command);
 
-    std::vector<std::string> args(split_string_into_args(command));
+    std::vector<std::string> args(split_string_into_args(command, ' '));
 
     // Currently case-sensitive
     if (args[0] == "exit") {
@@ -28,13 +28,7 @@ int main() {
         Builtins::echo(args);
     }
     else if (args[0] == "type") {
-        int type_code {Builtins::type(args[1])};
-        if (type_code == 0) {
-            std::cout << args[1] << " is a shell builtin\n";
-        }
-        else {
-            std::cout << args[1] << ": not found\n";
-        }
+        Builtins::type(args[1]);
     }
     else {
         std::cout << command << ": command not found\n";
