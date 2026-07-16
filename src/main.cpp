@@ -27,6 +27,15 @@ int main() {
     else if (args[0] == "echo") {
         Builtins::echo(args);
     }
+    else if (args[0] == "type") {
+        int type_code {Builtins::type(args[1])};
+        if (type_code == 0) {
+            std::cout << args[1] << " is a shell builtin\n";
+        }
+        else {
+            std::cout << args[1] << ": not found\n";
+        }
+    }
     else {
         std::cout << command << ": command not found\n";
     }

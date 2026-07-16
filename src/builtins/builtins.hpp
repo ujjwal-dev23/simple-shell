@@ -1,8 +1,11 @@
 #pragma once
 
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 namespace Builtins {
-void echo(std::vector<std::string>& args);
+    const std::unordered_set<std::string> builtin_names {"echo", "type", "exit"};
+    void echo(std::vector<std::string>& args);
+    int type(std::string command_arg);
 }
